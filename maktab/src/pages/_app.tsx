@@ -3,6 +3,11 @@ import flattenMessages from "@utils/fluttenMessage";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { IntlProvider } from "react-intl";
+import { useEffect } from "react";
+
+import AOS from "aos";
+
+import "aos/dist/aos.css";
 
 import Layout from "@layouts/Layout";
 import { ColorScheme, ColorSchemeProvider } from "@mantine/core";
@@ -16,6 +21,13 @@ export enum Lang {
 }
 
 function MyApp({ Component, pageProps, router }: AppProps) {
+  useEffect(() => {
+    AOS.init({
+      easing: "ease-out-cubic",
+      once: true,
+      offset: 50,
+    });
+  }, []);
   const [colorScheme, setColorScheme] = useLocalStorage<ColorScheme>({
     key: "mantine-color-scheme",
     defaultValue: "light",
