@@ -3,6 +3,7 @@ import Image from "next/image";
 import Autoplay from "embla-carousel-autoplay";
 import Img from "../imgs/1.jpg";
 import Img1 from "../imgs/cdc-GDokEYnOfnE-unsplash.jpg";
+import Img2 from "../imgs/maktabsinf.jpg"
 import { Box } from "@mantine/core";
 import { useRef } from "react";
 const data = [
@@ -18,7 +19,7 @@ const data = [
   },
   {
     id: 3,
-    url: Img,
+    url: Img2,
     title: "salom",
   },
 ];
@@ -43,7 +44,7 @@ const Slider = () => {
             transition: "width 250ms ease",
 
             "&[data-active]": {
-              width: 40,
+              width: 30,
             },
           },
         }}

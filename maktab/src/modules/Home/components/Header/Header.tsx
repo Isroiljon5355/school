@@ -7,7 +7,7 @@ type Props = {};
 const Header = (props: Props) => {
   return (
     <Box>
-      <Slider />
+      <Slider/>
     </Box>
   );
 };
